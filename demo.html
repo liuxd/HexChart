@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Six</title>
+        <script src="six.js"></script>
+    </head>
+    <body>
+        <canvas id="demo" style="position: absolute;top : 100px;left : 100px"></canvas>
+        <div style="position: absolute;top:100px;left:600px">
+            <ul>
+                <li>STR: <input type="text" id="STR" value="0.8" /></li>
+                <li>AGI: <input type="text" id="AGI" value="0.8" /></li>
+                <li>MAG: <input type="text" id="MAG" value="0.5" /></li>
+                <li>HP: <input type="text" id="HP" value="0.7" /></li>
+                <li>MP: <input type="text" id="MP" value="0.6" /></li>
+                <li>DEF: <input type="text" id="DEF" value="0.4" /></li>
+            </ul>
+            <button onclick="fresh()">Submit</button>
+        </div>
+        <script>
+            var str = document.getElementById('STR').value;
+            var agi = document.getElementById('AGI').value;
+            var mag = document.getElementById('MAG').value;
+            var hp = document.getElementById('HP').value;
+            var mp = document.getElementById('MP').value;
+            var def = document.getElementById('DEF').value;
+            six.init('demo', 150, ['STR', 'AGI', 'MAG', 'HP', 'MP', 'DEF']);
+            six.draw([str, agi, mag, hp, mp, def]);
+            function fresh() {
+                var str = document.getElementById('STR').value;
+                var agi = document.getElementById('AGI').value;
+                var mag = document.getElementById('MAG').value;
+                var hp = document.getElementById('HP').value;
+                var mp = document.getElementById('MP').value;
+                var def = document.getElementById('DEF').value;
+                six.init('demo', 150, ['STR', 'AGI', 'MAG', 'HP', 'MP', 'DEF']);
+                six.draw([str, agi, mag, hp, mp, def]);
+            }
+        </script>
+    </body>
+</html>
