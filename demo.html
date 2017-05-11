@@ -14,33 +14,33 @@
         <canvas id="demo" style="position: absolute;top : 100px;left : 100px"></canvas>
         <div style="position: absolute;top:100px;left:600px">
             <ul>
-                <li>俯卧撑: <input type="text" id="俯卧撑" value="0.3" /></li>
-                <li>深蹲: <input type="text" id="深蹲" value="0.3" /></li>
-                <li>引体向上: <input type="text" id="引体向上" value="0.1" /></li>
-                <li>举腿: <input type="text" id="举腿" value="0.3" /></li>
-                <li>桥: <input type="text" id="桥" value="0.1" /></li>
-                <li>倒立撑: <input type="text" id="倒立撑" value="0.1" /></li>
+                <li>PUSH-UPS: <input type="text" id="PUSH-UPS" value="3" /></li>
+                <li>SQUATS: <input type="text" id="SQUATS" value="3" /></li>
+                <li>PULL-UPS: <input type="text" id="PULL-UPS" value="1" /></li>
+                <li>LEG-RAISES: <input type="text" id="LEG-RAISES" value="3" /></li>
+                <li>BRIDGES: <input type="text" id="BRIDGES" value="1" /></li>
+                <li>HANDSTAND PUSH-UPS: <input type="text" id="HANDSTAND PUSH-UPS" value="1" /></li>
             </ul>
             <button onclick="fresh()">Submit</button>
         </div>
         <script>
-            var str = document.getElementById('俯卧撑').value;
-            var agi = document.getElementById('深蹲').value;
-            var mag = document.getElementById('引体向上').value;
-            var hp = document.getElementById('举腿').value;
-            var mp = document.getElementById('桥').value;
-            var def = document.getElementById('倒立撑').value;
-            hexagon.init('demo', 180, ['俯卧撑', '深蹲', '引体向上', '举腿', '桥', '倒立撑']);
+            var str = document.getElementById('PUSH-UPS').value / 10;
+            var agi = document.getElementById('SQUATS').value / 10;
+            var mag = document.getElementById('PULL-UPS').value / 10;
+            var hp = document.getElementById('LEG-RAISES').value / 10;
+            var mp = document.getElementById('BRIDGES').value / 10;
+            var def = document.getElementById('HANDSTAND PUSH-UPS').value / 10;
+            hexagon.init('demo', 180, ['PUSH-UPS', 'SQUATS', 'PULL-UPS', 'LEG-RAISES', 'BRIDGES', 'HANDSTAND PUSH-UPS']);
             hexagon.draw([str, agi, mag, hp, mp, def]);
 
             function fresh() {
-                var str = document.getElementById('俯卧撑').value;
-                var agi = document.getElementById('深蹲').value;
-                var mag = document.getElementById('引体向上').value;
-                var hp = document.getElementById('举腿').value;
-                var mp = document.getElementById('桥').value;
-                var def = document.getElementById('倒立撑').value;
-                hexagon.init('demo', 180, ['俯卧撑', '深蹲', '引体向上', '举腿', '桥', '倒立撑']);
+                var str = document.getElementById('PUSH-UPS').value / 10;
+                var agi = document.getElementById('SQUATS').value / 10;
+                var mag = document.getElementById('PULL-UPS').value / 10;
+                var hp = document.getElementById('LEG-RAISES').value / 10;
+                var mp = document.getElementById('BRIDGES').value / 10;
+                var def = document.getElementById('HANDSTAND PUSH-UPS').value / 10;
+                hexagon.init('demo', 180, ['PUSH-UPS', 'SQUATS', 'PULL-UPS', 'LEG-RAISES', 'BRIDGES', 'HANDSTAND PUSH-UPS']);
                 hexagon.draw([str, agi, mag, hp, mp, def]);
             }
         </script>
