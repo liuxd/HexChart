@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Hex Chart</title>
+        <link rel="shortcut icon" href="icon.png" />
+
+        <script src="hexagon-chart.js"></script>
+        <script src="bootstrap3/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.min.css">
+
+        <style>
+        body,li {
+            font-family : 微软雅黑,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid text-center" style="padding: 50px">
+            <canvas id="demo" class="col-md-4"></canvas>
+
+            <div class="col-md-5">
+                <table class="table table-bordered ">
+                    <thead><h4>Progress of Convict Conditioning</h4></thead>
+                    <tbody>
+                        <tr>
+                            <th class="text-center">Abbreviation</th><th class="text-center">Name</th><th class="text-center">Level</th>
+                        </tr>
+                        <tr>
+                            <td>PU</td><td>PUSH-UPS</td><td><input type="text" id="PUSH-UPS" value="3" /></td>
+                        </tr>
+                        <tr>
+                            <td>SQ</td><td>SQUATS</td><td><input type="text" id="SQUATS" value="6" /></td>
+                        </tr>
+                        <tr>
+                            <td>PL</td><td>PULL-UPS</td><td><input type="text" id="PULL-UPS" value="1" /></td>
+                        </tr>
+                        <tr>
+                            <td>LR</td><td>LEG-RAISES</td><td><input type="text" id="LEG-RAISES" value="3" /></td>
+                        </tr>
+                        <tr>
+                            <td>BR</td><td>BRIDGES</td><td><input type="text" id="BRIDGES" value="1" /></td>
+                        </tr>
+                        <tr>
+                            <td>HU</td><td>HANDSTAND PUSH-UPS</td><td><input type="text" id="HANDSTAND PUSH-UPS" value="1" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            <button class="btn btn-info btn-block" onclick="fresh()">Submit</button>
+            </div>
+
+        </div>
+        <script>
+            var str = document.getElementById('PUSH-UPS').value / 10;
+            var agi = document.getElementById('SQUATS').value / 10;
+            var mag = document.getElementById('PULL-UPS').value / 10;
+            var hp = document.getElementById('LEG-RAISES').value / 10;
+            var mp = document.getElementById('BRIDGES').value / 10;
+            var def = document.getElementById('HANDSTAND PUSH-UPS').value / 10;
+            hexagon.init('demo', 180, ['PU', 'SQ', 'PL', 'LR', 'BR', 'HU']);
+            hexagon.draw([str, agi, mag, hp, mp, def]);
+
+            function fresh() {
+                var str = document.getElementById('PUSH-UPS').value / 10;
+                var agi = document.getElementById('SQUATS').value / 10;
+                var mag = document.getElementById('PULL-UPS').value / 10;
+                var hp = document.getElementById('LEG-RAISES').value / 10;
+                var mp = document.getElementById('BRIDGES').value / 10;
+                var def = document.getElementById('HANDSTAND PUSH-UPS').value / 10;
+                hexagon.init('demo', 180, ['PU', 'SQ', 'PL', 'LR', 'BR', 'HU']);
+                hexagon.draw([str, agi, mag, hp, mp, def]);
+            }
+        </script>
+    </body>
+</html>
