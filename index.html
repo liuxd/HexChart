@@ -6,7 +6,6 @@
         <link rel="shortcut icon" href="icon.png" />
 
         <script src="hexagon-chart.js"></script>
-        <script src="bootstrap3/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.min.css">
 
         <style>
@@ -46,30 +45,28 @@
                         </tr>
                     </tbody>
                 </table>
-            <button class="btn btn-info btn-block" onclick="fresh()">Submit</button>
+            <button class="btn btn-lg btn-info btn-block" onclick="fresh()">Submit</button>
             </div>
 
         </div>
         <script>
-            var str = document.getElementById('PUSH-UPS').value / 10;
-            var agi = document.getElementById('SQUATS').value / 10;
-            var mag = document.getElementById('PULL-UPS').value / 10;
-            var hp = document.getElementById('LEG-RAISES').value / 10;
-            var mp = document.getElementById('BRIDGES').value / 10;
-            var def = document.getElementById('HANDSTAND PUSH-UPS').value / 10;
-            hexagon.init('demo', 180, ['PU', 'SQ', 'PL', 'LR', 'BR', 'HU']);
-            hexagon.draw([str, agi, mag, hp, mp, def]);
+            function getValueByID(id) {
+                return document.getElementById(id).value;
+            }
 
             function fresh() {
-                var str = document.getElementById('PUSH-UPS').value / 10;
-                var agi = document.getElementById('SQUATS').value / 10;
-                var mag = document.getElementById('PULL-UPS').value / 10;
-                var hp = document.getElementById('LEG-RAISES').value / 10;
-                var mp = document.getElementById('BRIDGES').value / 10;
-                var def = document.getElementById('HANDSTAND PUSH-UPS').value / 10;
+                var str = getValueByID('PUSH-UPS') / 10;
+                var agi = getValueByID('SQUATS') / 10;
+                var mag = getValueByID('PULL-UPS') / 10;
+                var hp = getValueByID('LEG-RAISES') / 10;
+                var mp = getValueByID('BRIDGES') / 10;
+                var def = getValueByID('HANDSTAND PUSH-UPS') / 10;
+
                 hexagon.init('demo', 180, ['PU', 'SQ', 'PL', 'LR', 'BR', 'HU']);
                 hexagon.draw([str, agi, mag, hp, mp, def]);
             }
+
+            fresh ();
         </script>
     </body>
 </html>
