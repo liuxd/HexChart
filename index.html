@@ -12,14 +12,22 @@
         body,li {
             font-family : 微软雅黑,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         }
+
+        #base_container {
+            padding: 100px
+        }
+
         </style>
     </head>
     <body>
-        <div class="container-fluid text-center" style="padding: 50px">
-            <canvas id="demo" class="col-md-4"></canvas>
+        <div id="base_container" class="container-fluid text-center">
 
-            <div class="col-md-5">
-                <table class="table table-bordered ">
+            <div class="col-md-6">
+                <canvas id="demo"></canvas>
+            </div>
+
+            <div class="col-md-6">
+                <table class="table table-bordered table-striped table-hover">
                     <thead><h4>Progress of Convict Conditioning</h4></thead>
                     <tbody>
                         <tr>
