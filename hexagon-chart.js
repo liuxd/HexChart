@@ -47,8 +47,12 @@ var hexagon = {
         for (i in values) {
             values[i] = parseFloat(values[i]);
 
-            if (values[i] > 1 || values[i] < 0) {
-                return false;
+            if (values[i] > 1) {
+                values[i] = 1;
+            }
+            
+            if (values[i] < 0) {
+                values[i] = 0;
             }
         }
 
